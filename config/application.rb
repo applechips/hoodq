@@ -12,6 +12,12 @@ require "action_cable/engine"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
+# require 'json'
+# file = File.read('config/addresses.json')
+# data_hash = JSON.parse(file)
+# print data_hash.values
+# print data_hash.keys
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

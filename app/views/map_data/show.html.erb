@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @map_datum.address %>
+</p>
+
+<p>
+  <strong>Nearestcoffeeshop:</strong>
+  <%= @map_datum.nearestCoffeeShop %>
+</p>
+
+<p>
+  <strong>Workdistance:</strong>
+  <%= @map_datum.workDistance %>
+</p>
+
+<p>
+  <strong>Nearbydogpark:</strong>
+  <%= @map_datum.nearbyDogPark %>
+</p>
+
+<%= link_to 'Edit', edit_map_datum_path(@map_datum) %> |
+<%= link_to 'Back', map_data_path %>
