@@ -1,11 +1,113 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Map Data</h1>
+<style>
+.pricing_title h2 {
+    font-size: 1em;
+    color: #000;
+    text-transform: uppercase;
+    margin-top: 100px;
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+.pricing_title span {
+    font-family: 'Lato', sans-serif;
+    font-size: 3em;
+    color: #efc337;
+    text-transform: uppercase;
+    margin-top: 100px;
+    letter-spacing: 10px;
+    font-weight: 400;
+}
+
+.pricing_p {
+    font-size: 14px;
+    color: #000;
+    line-height: 25px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.pricing .plan {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.pricing .plan li > strong {
+    padding: 8px 10px;
+    color: #000;
+    -webkit-transition: 300ms;
+    transition: 300ms;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.pricing .plan li.plan-price {
+    border-top: 0;
+    margin: 20px auto;
+    font-size: 50px;
+}
+
+.pricing .plan li.plan-action {
+    margin-top: 50px;
+    border-top: 0;
+}
+
+.btn-services {
+    color: #FFF;
+    background-color: #000000;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.plan-action a:hover {
+    color: #fff;
+}
+
+.pricing .plan {
+    border:5px solid #EFC337;
+}
+
+.pricing .plan li.plan-name {
+    font-family: 'Lato', sans-serif;
+    padding: 40px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #222;
+    font-weight: 800;
+}
+
+.pricing .plan .price {
+    font-family: 'PT Mono';
+    letter-spacing: 6px;
+    font-weight: 200;
+    font-size: 30px;
+    color: #000;
+}
+
+.pricing .plan li {
+    padding: 15px 20px;
+    color: #000;
+    -webkit-transition: 300ms;
+    transition: 300ms;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: 300;
+}
+</style>
 
 
-<%= @data_hash[0] %>
-
-<table>
+<!-- <table>
   <thead>
     <tr>
       <th>Address</th>
@@ -17,24 +119,26 @@
   </thead>
 
   <tbody>
-    <% @map_data.each do |map_datum| %>
+    <%# @map_data.each do |map_datum| %>
       <tr>
-        <td><%= map_datum.address %></td>
-        <td><%= map_datum.nearestCoffeeShop %></td>
-        <td><%= map_datum.workDistance %></td>
-        <td><%= map_datum.nearbyDogPark %></td>
-        <td><%= link_to 'Show', map_datum %></td>
-        <td><%= link_to 'Edit', edit_map_datum_path(map_datum) %></td>
-        <td><%= link_to 'Destroy', map_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= map_datum.address %></td>
+        <td><%#= map_datum.nearestCoffeeShop %></td>
+        <td><%#= map_datum.workDistance %></td>
+        <td><%#= map_datum.nearbyDogPark %></td>
+        <td><%#= link_to 'Show', map_datum %></td>
+        <td><%#= link_to 'Edit', edit_map_datum_path(map_datum) %></td>
+        <td><%#= link_to 'Destroy', map_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <%# end %>
   </tbody>
-</table>
+</table> -->
 
-<br>
+<div class="container">
+<h1>Map Data</h1>
+</div>
 
-<%= link_to 'New Map Datum', new_map_datum_path %>
-
+<% json = @data_hash %>
+<%= json["locations"][0]["address"] %>
 
 
 <section>
@@ -68,4 +172,50 @@
 
     </div> <!-- row -->
   </div>
+</section>
+
+<section class="pricing" id="PRICING">
+<div class="container">
+    <div class="row flat_price">
+        <div class="col-sm-6">
+            <ul class="plan wow fadeInUp animated" data-wow-duration="500ms">
+                <li class="plan-name">
+                    PICK #1
+                </li>
+                <li class="plan-price">
+                    <strong class="price">Address</strong>
+                </li>
+                <li>
+                    Nearest Coffee Shop:
+                </li>
+                <li>
+                    Work Distance:
+                </li>
+                <li>
+                    Nearby Dog Park:
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-sm-6">
+            <ul class="plan wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+                <li class="plan-name">
+                    PICK #2
+                </li>
+                <li class="plan-price">
+                    <strong class="price">Address</strong>
+                </li>
+                <li>
+                    Nearest Coffee Shop:
+                </li>
+                <li>
+                    Work Distance:
+                </li>
+                <li>
+                    Nearby Dog Park:
+                </li>
+            </ul>
+        </div>
+    </div><!-- END ROW -->
+</div><!-- END CONTAINER -->
 </section>

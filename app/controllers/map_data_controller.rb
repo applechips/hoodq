@@ -7,7 +7,7 @@ class MapDataController < ApplicationController
   # GET /map_data.json
   def index
     file = File.read('config/addresses.json')
-    @data_hash = JSON.parse([file].to_json)
+    @data_hash = JSON.parse(file)
     # print @data_hash[0]
     # print data_hash.keys
 
