@@ -1,1 +1,0 @@
-json.partial! "map_data/map_datum", map_datum: @map_datum

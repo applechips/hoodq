@@ -1,178 +1,48 @@
-<p id="notice"><%= notice %></p>
-
-<style>
-.pricing_title h2 {
-    font-size: 1em;
-    color: #000;
-    text-transform: uppercase;
-    margin-top: 100px;
-    letter-spacing: 3px;
-    font-weight: 300;
-}
-
-.pricing_title span {
-    font-family: 'Lato', sans-serif;
-    font-size: 3em;
-    color: #efc337;
-    text-transform: uppercase;
-    margin-top: 100px;
-    letter-spacing: 10px;
-    font-weight: 400;
-}
-
-.pricing_p {
-    font-size: 14px;
-    color: #000;
-    line-height: 25px;
-    letter-spacing: 1px;
-    font-weight: 300;
-}
-
-.pricing .plan {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-.pricing .plan li > strong {
-    padding: 8px 10px;
-    color: #000;
-    -webkit-transition: 300ms;
-    transition: 300ms;
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: 3px;
-}
-
-.pricing .plan li.plan-price {
-    border-top: 0;
-    margin: 20px auto;
-    font-size: 50px;
-}
-
-.pricing .plan li.plan-action {
-    margin-top: 50px;
-    border-top: 0;
-}
-
-.btn-services {
-    color: #FFF;
-    background-color: #000000;
-    border-radius: 0;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 10px;
-    letter-spacing: 3px;
-    margin-bottom: 25px;
-}
-
-.plan-action a:hover {
-    color: #fff;
-}
-
-.pricing .plan {
-    border:5px solid #EFC337;
-}
-
-.pricing .plan li.plan-name {
-    font-family: 'Lato', sans-serif;
-    padding: 40px;
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    color: #222;
-    font-weight: 800;
-}
-
-.pricing .plan .price {
-    font-family: 'PT Mono';
-    letter-spacing: 6px;
-    font-weight: 200;
-    font-size: 30px;
-    color: #000;
-}
-
-.pricing .plan li {
-    padding: 15px 20px;
-    color: #000;
-    -webkit-transition: 300ms;
-    transition: 300ms;
-    font-family: 'Lato', sans-serif;
-    letter-spacing: 1px;
-    font-size: 12px;
-    font-weight: 300;
-}
-</style>
-
-
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Address</th>
-      <th>Nearestcoffeeshop</th>
-      <th>Workdistance</th>
-      <th>Nearbydogpark</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%# @map_data.each do |map_datum| %>
-      <tr>
-        <td><%#= map_datum.address %></td>
-        <td><%#= map_datum.nearestCoffeeShop %></td>
-        <td><%#= map_datum.workDistance %></td>
-        <td><%#= map_datum.nearbyDogPark %></td>
-        <td><%#= link_to 'Show', map_datum %></td>
-        <td><%#= link_to 'Edit', edit_map_datum_path(map_datum) %></td>
-        <td><%#= link_to 'Destroy', map_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <%# end %>
-  </tbody>
-</table> -->
-
-<div class="container">
-<h1>Map Data</h1>
-</div>
-
-<% json = @data_hash %>
-<%= json["locations"][0]["address"] %>
+<header>
+  <div>
+    <img src="images/hoodq-logo.png" id="logo">
+    <div class="container">
+      <h2 id="title">Address Comparison Prioritizer</h2>
+    </div>
+  </div>
+</header>
 
 
 <section>
   <div class="container">
     <div class="row">
+
+      <!--  LIST #1 -->
       <div class="col-sm-6">
-            address 1
         <div class="form-group">
           <label for="sel1">Select list:</label>
           <select class="form-control" id="sel1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
+            <% @json.each do |i| %>
+              <option><%= i["address"] %></option>
+            <% end %>
           </select>
         </div> <!-- form-group -->
       </div> <!-- col -->
 
-          <div class="col-sm-6">
-            address 2
-            <div class="form-group">
-              <label for="sel1">Select list:</label>
-              <select class="form-control" id="sel1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
-            </div> <!-- form-group -->
-          </div> <!-- col -->
-
+      <!--  LIST #2 -->
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="sel1">Select list:</label>
+          <select class="form-control" id="sel2">
+            <% @json.each do |i| %>
+              <option><%= i["address"] %></option>
+            <% end %>
+          </select>
+        </div> <!-- form-group -->
+      </div> <!-- col -->
     </div> <!-- row -->
+
+    <%= form_tag(new_map_datum_path, method: :get) do %>
+      <%= submit_tag 'Compare!', id: 'compare_button' %>
+    <% end %>
   </div>
 </section>
+
 
 <section class="pricing" id="PRICING">
 <div class="container">
@@ -219,3 +89,5 @@
     </div><!-- END ROW -->
 </div><!-- END CONTAINER -->
 </section>
+
+<img src="images/neighbourhood.png" id="neighbourhood">

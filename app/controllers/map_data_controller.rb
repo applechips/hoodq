@@ -1,28 +1,21 @@
 class MapDataController < ApplicationController
-  before_action :set_map_datum, only: [:show, :edit, :update, :destroy]
-
   require 'json'
 
-  # GET /map_data
-  # GET /map_data.json
   def index
     file = File.read('config/addresses.json')
     @data_hash = JSON.parse(file)
-    # print @data_hash[0]
-    # print data_hash.keys
-
-    @map_data = MapDatum.all
-
+    @json = @data_hash["locations"]
   end
 
   # GET /map_data/1
   # GET /map_data/1.json
   def show
+
   end
 
   # GET /map_data/new
   def new
-    @map_datum = MapDatum.new
+    
   end
 
   # GET /map_data/1/edit

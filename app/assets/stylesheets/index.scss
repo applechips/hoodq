@@ -1,0 +1,142 @@
+
+.pricing_title h2 {
+    font-size: 1em;
+    color: #000;
+    text-transform: uppercase;
+    margin-top: 100px;
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+.pricing_title span {
+    font-family: 'Lato', sans-serif;
+    font-size: 3em;
+    color: #efc337;
+    text-transform: uppercase;
+    margin-top: 100px;
+    letter-spacing: 10px;
+    font-weight: 400;
+}
+
+.pricing_p {
+    font-size: 14px;
+    color: #000;
+    line-height: 25px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.pricing .plan {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.pricing .plan li > strong {
+    padding: 8px 10px;
+    color: #000;
+    -webkit-transition: 300ms;
+    transition: 300ms;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.pricing .plan li.plan-price {
+    border-top: 0;
+    margin: 20px auto;
+    font-size: 50px;
+}
+
+.pricing .plan li.plan-action {
+    margin-top: 50px;
+    border-top: 0;
+}
+
+.btn-services {
+    color: #FFF;
+    background-color: #000000;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.plan-action a:hover {
+    color: #fff;
+}
+
+.pricing .plan {
+    border:5px solid #C1D42F;
+}
+
+.pricing .plan li.plan-name {
+    font-family: 'Lato', sans-serif;
+    padding: 40px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #222;
+    font-weight: 800;
+}
+
+.pricing .plan .price {
+    font-family: 'PT Mono';
+    letter-spacing: 6px;
+    font-weight: 200;
+    font-size: 30px;
+    color: #000;
+}
+
+.pricing .plan li {
+    padding: 15px 20px;
+    color: #000;
+    -webkit-transition: 300ms;
+    transition: 300ms;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+#logo {
+  padding-top:20px;
+  padding-left:50px;
+}
+
+#title {
+  text-align: center;
+  color: #00AEEF;
+  font-family: 'avenir';
+  font-size: 50px;
+}
+
+#neighbourhood {
+  z-index: -1;
+}
+
+#compare_button {
+  color: #fff;
+  background-color: #c1d42f;
+  border-color: #c1d42f;
+  display: block;
+  font-weight: 200;
+  text-align: center;
+  border: 1px solid transparent;
+  font-family: Avenir;
+  font-size: 24px;
+  border-radius: 16px;
+  padding: 18px 26px 16px;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+#compare_button:hover {
+  color: #fff;
+  background-color: #9dac24;
+  border-color: #95a422;
+}
