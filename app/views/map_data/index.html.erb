@@ -7,42 +7,43 @@
   </div>
 </header>
 
+<%= form_for(map_data_path, method: :post) do |f| %>
 
+<%#= form_for map_data_new_path, url: {action: "new"}, method: :post do |f| %>
 <section>
   <div class="container">
     <div class="row">
-
       <!--  LIST #1 -->
       <div class="col-sm-6">
         <div class="form-group">
-          <label for="sel1">Select list:</label>
-          <select class="form-control" id="sel1">
-            <% @json.each do |i| %>
-              <option><%= i["address"] %></option>
+          <%= f.select(:address_1, id: 'first') do |x| %>
+            <% @json.each do |address| %>
+              <%= content_tag(:option, address['address']) %>
             <% end %>
-          </select>
+          <% end %>
         </div> <!-- form-group -->
       </div> <!-- col -->
 
       <!--  LIST #2 -->
       <div class="col-sm-6">
         <div class="form-group">
-          <label for="sel1">Select list:</label>
-          <select class="form-control" id="sel2">
-            <% @json.each do |i| %>
-              <option><%= i["address"] %></option>
+          <%= f.select(:address_2, id: 'second') do |x| %>
+            <% @json.each do |address| %>
+              <%= content_tag(:option, address['address']) %>
             <% end %>
-          </select>
+          <% end %>
         </div> <!-- form-group -->
       </div> <!-- col -->
     </div> <!-- row -->
-
-    <%= form_tag(new_map_datum_path, method: :get) do %>
-      <%= submit_tag 'Compare!', id: 'compare_button' %>
-    <% end %>
+      <%= f.submit 'Compare!', id: 'compare_button' %>
   </div>
 </section>
+<% end %>
 
+<hr/>
+
+
+<hr/>
 
 <section class="pricing" id="PRICING">
 <div class="container">
@@ -90,4 +91,8 @@
 </div><!-- END CONTAINER -->
 </section>
 
-<img src="images/neighbourhood.png" id="neighbourhood">
+<footer>
+  <div>
+    <img src="images/neighbourhood.png" id="neighbourhood">
+  </div>
+</footer>

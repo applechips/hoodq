@@ -1,59 +1,69 @@
 { "locations": [
-   {
+    {
+    "id": "0",
     "address": "10 King st E, Toronto, ON",
     "nearestCoffeeShop": "Starbucks",
     "workDistance": "900m",
     "nearbyDogPark": "yes"
   },
    {
+    "id": "1",
     "address": "20 Queen st E, Toronto, ON",
     "nearestCoffeeShop": "Tim Hortons",
     "workDistance": "1km",
     "nearbyDogPark": "yes"
   },
    {
+    "id": "2",
     "address": "30 Richmond st E, Toronto, ON",
     "nearestCoffeeShop": "Starbucks",
     "workDistance": "900m",
     "nearbyDogPark": "no"
   },
    {
+    "id": "3",
     "address": "40 Front st, Toronto, ON",
     "nearestCoffeeShop": "Tim Hortons",
     "workDistance": "800m",
     "nearbyDogPark": "yes"
   },
    {
+    "id": "4",
     "address": "50 Adelaide st, Toronto, ON",
     "nearestCoffeeShop": "Starbucks",
     "workDistance": "10m",
     "nearbyDogPark": "no"
   },
    {
+    "id": "5",
     "address": "60 Bay st, Toronto, ON",
     "nearestCoffeeShop": "Starbucks",
     "workDistance": "1.2km",
     "nearbyDogPark": "yes"
   },
    {
+    "id": "6",
     "address": "70 Church st, Toronto, ON",
     "nearestCoffeeShop": "Tim Hortons",
     "workDistance": "700m",
     "nearbyDogPark": "no"
   },
    {
+    "id": "7",
     "address": "80 Dundas st, Toronto, ON",
     "nearestCoffeeShop": "Second Cup",
     "workDistance": "1.2km",
     "nearbyDogPark": "yes"
   },
    {
+    "id": "8",
     "address": "90 Yonge st, Toronto, ON",
     "nearestCoffeeShop": "Starbucks",
     "workDistance": "900m",
     "nearbyDogPark": "no"
   },
    {
+    "id": "9",
     "address": "100 College st, Toronto, ON",
     "nearestCoffeeShop": "Starbucks",
     "workDistance": "800m",

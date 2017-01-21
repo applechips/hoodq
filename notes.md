@@ -44,3 +44,39 @@
   </div>
 
 </section>
+
+
+
+
+
+
+
+
+<section>
+  <div class="container">
+    <div class="row">
+      <!--  LIST #1 -->
+      <div class="col-sm-6">
+        <div class="form-group">
+          <select class="form-control" id="sel1">
+            <% @json.each do |i| %>
+            <option value="<%= i["id"] %>"><%= i["address"] %></option>
+            <% end %>
+          </select>
+        </div> <!-- form-group -->
+      </div> <!-- col -->
+
+      <!--  LIST #2 -->
+      <div class="col-sm-6">
+        <div class="form-group">
+          <select class="form-control" id="sel2">
+            <% @json.each do |i| %>
+            <option value="<%= i["id"] %>" ><%= i["address"] %></option>
+            <% end %>
+          </select>
+        </div> <!-- form-group -->
+      </div> <!-- col -->
+    </div> <!-- row -->
+      <%= f.submit 'Compare!', id: 'compare_button' %>
+  </div>
+</section>

@@ -1,29 +1,11 @@
-
-.pricing_title h2 {
-    font-size: 1em;
-    color: #000;
-    text-transform: uppercase;
-    margin-top: 100px;
-    letter-spacing: 3px;
-    font-weight: 300;
-}
-
 .pricing_title span {
-    font-family: 'Lato', sans-serif;
+    font-family: Avenir;
     font-size: 3em;
     color: #efc337;
     text-transform: uppercase;
     margin-top: 100px;
     letter-spacing: 10px;
     font-weight: 400;
-}
-
-.pricing_p {
-    font-size: 14px;
-    color: #000;
-    line-height: 25px;
-    letter-spacing: 1px;
-    font-weight: 300;
 }
 
 .pricing .plan {
@@ -46,12 +28,12 @@
 
 .pricing .plan li.plan-price {
     border-top: 0;
-    margin: 20px auto;
+    margin: 10px auto;
     font-size: 50px;
 }
 
 .pricing .plan li.plan-action {
-    margin-top: 50px;
+    // margin-top: 50px;
     border-top: 0;
 }
 
@@ -66,17 +48,14 @@
     margin-bottom: 25px;
 }
 
-.plan-action a:hover {
-    color: #fff;
-}
-
 .pricing .plan {
-    border:5px solid #C1D42F;
+    border:5px solid #00AEEF;
 }
 
 .pricing .plan li.plan-name {
-    font-family: 'Lato', sans-serif;
-    padding: 40px;
+    font-family: Avenir;
+    padding: 40px 40px 20px 40px;
+    // padding-bottom: 20px;
     font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -85,7 +64,7 @@
 }
 
 .pricing .plan .price {
-    font-family: 'PT Mono';
+    font-family: Avenir;
     letter-spacing: 6px;
     font-weight: 200;
     font-size: 30px;
@@ -97,7 +76,7 @@
     color: #000;
     -webkit-transition: 300ms;
     transition: 300ms;
-    font-family: 'Lato', sans-serif;
+    font-family: Avenir;
     letter-spacing: 1px;
     font-size: 12px;
     font-weight: 300;
