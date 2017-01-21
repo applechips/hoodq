@@ -7,7 +7,7 @@
   </div>
 </header>
 
-<%= form_for(map_data_path, method: :post) do |f| %>
+<%= form_for(map_data_path, html: { id: 'comparison_form' }) do |f| %>
 
 <%#= form_for map_data_new_path, url: {action: "new"}, method: :post do |f| %>
 <section>
@@ -49,7 +49,7 @@
 <div class="container">
     <div class="row flat_price">
         <div class="col-sm-6">
-            <ul class="plan wow fadeInUp animated" data-wow-duration="500ms">
+            <ul id='selection_1' class="plan wow fadeInUp animated" data-wow-duration="500ms">
                 <li class="plan-name">
                     PICK #1
                 </li>
@@ -69,7 +69,7 @@
         </div>
 
         <div class="col-sm-6">
-            <ul class="plan wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+            <ul id='selection_2' class="plan wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
                 <li class="plan-name">
                     PICK #2
                 </li>

@@ -26,7 +26,7 @@ class MapDataController < ApplicationController
     # @data_hash = JSON.parse(file)
     # @json = @data_hash["locations"]
     # @test = @data_hash["locations"][0].values
-    redirect_to new_map_datum_path
+    # redirect_to new_map_datum_path
   end
 
   def new
