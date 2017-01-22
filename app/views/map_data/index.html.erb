@@ -7,81 +7,29 @@
   </div>
 </header>
 
-<style>
-  #sortable {
-    list-style-type: none;
-    margin: 10px;
-    padding: 0;
-    width: 60%;
-    text-align: center;
-  }
-  #sortable li {
-    margin: 5px;
-    padding: 10px;
-    /*padding-left: 1.5em;*/
-    font-size: 1.4em;
-    height: 40px;
-    border: 2px solid;
-    border-color: #c1d42f;
-    width: 60%;
-    text-align: center;
-    color:#00AEEF;
-    font-family: avenir;
-   }
-  #sortable li span {
-    position: absolute;
-    margin-left: -1.3em;
-    text-align: center
-  }
+<div id="priority-section">
+  <section>
+    <h4>What's Important to You?</h4>
+    <br>
+    <p id="desc">Drag &amp; Drop! &udarr;</p>
+    <div class="container" id="priority">
+      <div id="sortable-ul">
+        <ul id="sortable">
 
-  h4 {
-    text-align: center;
-  }
-
-  #prioritize_button {
-    color: #fff;
-    background-color: #c1d42f;
-    border-color: #c1d42f;
-    display: block;
-    font-weight: 200;
-    text-align: center;
-    border: 1px solid transparent;
-    font-family: Avenir;
-    font-size: 24px;
-    border-radius: 16px;
-    padding: 18px 26px 16px;
-    margin: auto;
-    margin-bottom: 15px;
-  }
-
-  #prioritize_button:hover {
-    color: #fff;
-    background-color: #9dac24;
-    border-color: #95a422;
-  }
-</style>
-
-
-<section>
-  <h4>What's more important?</h4>
+          <li class="ui-state-default">Nearest Coffee Shop</li>
+          <li class="ui-state-default">Work Distance</li>
+          <li class="ui-state-default">Nearby Dog Park</li>
+        </ul>
+      </div>
+    </div>
   <div class="container">
-    <ul id="sortable">
-      <li class="ui-state-default">Nearest Coffee Shop</li>
-      <li class="ui-state-default">Work Distance</li>
-      <li class="ui-state-default">Nearby Dog Park</li>
-    </ul>
+    <button id='prioritize_button' onClick="myFunction()">Prioritize!</button>
   </div>
-
-<div class="container">
-  <br>
-  <button id='prioritize_button'>Prioritize!</button>
+  </section>
 </div>
-</section>
-
 
 <%= form_for(map_data_path, html: { id: 'comparison_form' }) do |f| %>
 <section>
-
   <div class="container">
     <div class="row">
       <!--  LIST #1 -->
@@ -106,11 +54,12 @@
         </div> <!-- form-group -->
       </div> <!-- col -->
     </div> <!-- row -->
-      <%= f.submit 'Compare!', id: 'compare_button' %>
   </div>
+      <%= f.submit 'Compare!', id: 'compare_button' %>
 </section>
 <% end %>
 
+<div id="compare-boxes">
 <section class="pricing" id="PRICING">
 <div class="container">
     <div class="row flat_price">
@@ -131,6 +80,7 @@
                 <li class="dog">
                     Nearby Dog Park:
                 </li>
+                <br>
             </ul>
         </div>
 
@@ -152,11 +102,13 @@
                 <li class="dog">
                     Nearby Dog Park:
                 </li>
+                <br>
             </ul>
         </div>
     </div><!-- END ROW -->
 </div><!-- END CONTAINER -->
 </section>
+</div>
 
 
 <footer>

@@ -13,7 +13,7 @@ $(document).ready (function(){
       var data = { address1: data1, address2: data2 };
       // Replace Contents
       $('#selection_1 .price').text(address1)
-      $('#selection_1 .coffee').text(data1.coffee)
+      $('#selection_1 .coffee').text('Nearest Coffee Shop  ' + data1.coffee)
       $('#selection_1 .work').text('Work Distance:  ' + data1.work)
       $('#selection_1 .dog').text('Nearby Dog Park:  ' + data1.dogpark)
 
@@ -91,12 +91,14 @@ $(document).ready (function(){
       console.log('points', points);
       if (points.address1 > points.address2) {
         $('#selection_1').append('<h3>Winner!</h3>')
+        $('#selection_2').append('<h3>&nbsp;</h3>')
       } else if (points.address1 === points.address2){
           $('#selection_1').append('<h3>Tie!</h3>')
           $('#selection_2').append('<h3>Tie!</h3>')
       }
        else {
         $('#selection_2').append('<h3>Winner!</h3>')
+        $('#selection_1').append('<h3>&nbsp;</h3>')
       }
       return false
     });
@@ -115,3 +117,9 @@ $(document).ready (function(){
       })
     } );
   })
+
+  //
+
+  function myFunction() {
+      alert("Great! Now select which addresses to compare.");
+  }
