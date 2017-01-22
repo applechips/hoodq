@@ -7,18 +7,89 @@
   </div>
 </header>
 
-<%= form_for(map_data_path, html: { id: 'comparison_form' }) do |f| %>
+<style>
+  #sortable {
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+    width: 60%;
+    text-align: center;
+  }
+  #sortable li {
+    margin: 5px;
+    padding: 10px;
+    /*padding-left: 1.5em;*/
+    font-size: 1.4em;
+    height: 40px;
+    border: 2px solid;
+    border-color: #c1d42f;
+    width: 60%;
+    text-align: center;
+    color:#00AEEF;
+    font-family: avenir;
+   }
+  #sortable li span {
+    position: absolute;
+    margin-left: -1.3em;
+    text-align: center
+  }
 
-<%#= form_for map_data_new_path, url: {action: "new"}, method: :post do |f| %>
+  h4 {
+    text-align: center;
+  }
+
+  #prioritize_button {
+    color: #fff;
+    background-color: #c1d42f;
+    border-color: #c1d42f;
+    display: block;
+    font-weight: 200;
+    text-align: center;
+    border: 1px solid transparent;
+    font-family: Avenir;
+    font-size: 24px;
+    border-radius: 16px;
+    padding: 18px 26px 16px;
+    margin: auto;
+    margin-bottom: 15px;
+  }
+
+  #prioritize_button:hover {
+    color: #fff;
+    background-color: #9dac24;
+    border-color: #95a422;
+  }
+</style>
+
+
 <section>
+  <h4>What's more important?</h4>
+  <div class="container">
+    <ul id="sortable">
+      <li class="ui-state-default">Nearest Coffee Shop</li>
+      <li class="ui-state-default">Work Distance</li>
+      <li class="ui-state-default">Nearby Dog Park</li>
+    </ul>
+  </div>
+
+<div class="container">
+  <br>
+  <button id='prioritize_button'>Prioritize!</button>
+</div>
+</section>
+
+
+<%= form_for(map_data_path, html: { id: 'comparison_form' }) do |f| %>
+<section>
+
   <div class="container">
     <div class="row">
       <!--  LIST #1 -->
       <div class="col-sm-6">
-        <div class="form-group">
+        <div class="form-group" id="form">
           <%= f.select(:address_1, id: 'first') do |x| %>
             <% @json.each do |address| %>
-              <%= content_tag(:option, address['address']) %>
+              <%= content_tag(:option, address['address'], data: {coffee: address["nearestCoffeeShop"], work: address["workDistance"], dogpark: address["nearbyDogPark"] }) %>
             <% end %>
           <% end %>
         </div> <!-- form-group -->
@@ -26,10 +97,10 @@
 
       <!--  LIST #2 -->
       <div class="col-sm-6">
-        <div class="form-group">
+        <div class="form-group" id="form">
           <%= f.select(:address_2, id: 'second') do |x| %>
             <% @json.each do |address| %>
-              <%= content_tag(:option, address['address']) %>
+              <%= content_tag(:option, address['address'], data: {coffee: address["nearestCoffeeShop"], work: address["workDistance"], dogpark: address["nearbyDogPark"] }) %>
             <% end %>
           <% end %>
         </div> <!-- form-group -->
@@ -39,11 +110,6 @@
   </div>
 </section>
 <% end %>
-
-<hr/>
-
-
-<hr/>
 
 <section class="pricing" id="PRICING">
 <div class="container">
@@ -56,13 +122,13 @@
                 <li class="plan-price">
                     <strong class="price">Address</strong>
                 </li>
-                <li>
+                <li class="coffee">
                     Nearest Coffee Shop:
                 </li>
-                <li>
+                <li class="work">
                     Work Distance:
                 </li>
-                <li>
+                <li class="dog">
                     Nearby Dog Park:
                 </li>
             </ul>
@@ -76,13 +142,14 @@
                 <li class="plan-price">
                     <strong class="price">Address</strong>
                 </li>
-                <li>
+
+                <li class='coffee'>
                     Nearest Coffee Shop:
                 </li>
-                <li>
+                <li class="work">
                     Work Distance:
                 </li>
-                <li>
+                <li class="dog">
                     Nearby Dog Park:
                 </li>
             </ul>
@@ -90,6 +157,7 @@
     </div><!-- END ROW -->
 </div><!-- END CONTAINER -->
 </section>
+
 
 <footer>
   <div>

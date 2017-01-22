@@ -1,3 +1,11 @@
+sort the array
+compare the array
+
+
+
+
+
+
 6 Priority Combinations
 
 {Coffee,Work,Dog}

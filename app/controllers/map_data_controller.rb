@@ -13,6 +13,7 @@ class MapDataController < ApplicationController
     # end
 
     # render json: @test
+
   end
 
   # POST /map_data/new

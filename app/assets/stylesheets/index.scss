@@ -65,9 +65,9 @@
 
 .pricing .plan .price {
     font-family: Avenir;
-    letter-spacing: 6px;
+    letter-spacing: 3px;
     font-weight: 200;
-    font-size: 30px;
+    font-size: 25px;
     color: #000;
 }
 
@@ -118,4 +118,26 @@
   color: #fff;
   background-color: #9dac24;
   border-color: #95a422;
+}
+
+#form {
+  margin: 25px;
+  text-align: center;
+}
+
+input {
+    height: 50%;
+}
+p {
+  padding: 15px 20px;
+  color: #000;
+  font-family: Avenir;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 100;
+  color: #c1d42f;
+}
+
+h3 {
+  
 }
